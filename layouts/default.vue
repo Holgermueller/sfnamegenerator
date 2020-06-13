@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -23,21 +23,22 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
     <v-app-bar :clipped-left="clipped" fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer" /> -->
 
-      <v-toolbar-title v-text="title" />
+      <nuxt-link to="/"> <v-toolbar-title v-text="title" /> </nuxt-link>
       <v-spacer />
+      <nuxt-link to="/inspire">About</nuxt-link>
     </v-app-bar>
-    <v-content>
+    <v-main>
       <v-container>
         <nuxt />
       </v-container>
-    </v-content>
+    </v-main>
 
     <v-footer :fixed="fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span>&copy; {{ new Date().getFullYear() }} | Holger Mueller</span>
     </v-footer>
   </v-app>
 </template>
@@ -63,8 +64,14 @@ export default {
       ],
       miniVariant: false,
 
-      title: "Vuetify.js"
+      title: "SFNG"
     };
   }
 };
 </script>
+
+<style scoped>
+a {
+  text-decoration: none;
+}
+</style>
