@@ -4,12 +4,17 @@
       <div class="text-center"></div>
       <v-card>
         <v-card-title class="title">SFNG</v-card-title>
-      </v-card>
-      <v-card>
+        <v-card-text>
+          <div>{{ this.generatedName }}</div>
+        </v-card-text>
         <v-card-actions>
-          <v-btn>
-            Add A Letter
-          </v-btn>
+          <ul>
+            <li>
+              <v-btn @click="chooseConsonant" block>Add a Consonant</v-btn>
+            </li>
+            <li><v-btn @click="chooseVowel" block>Add a Vowel</v-btn></li>
+            <li><v-btn @click="clearName" block>Clear</v-btn></li>
+          </ul>
         </v-card-actions>
       </v-card>
     </v-flex>
@@ -17,13 +22,67 @@
 </template>
 
 <script>
-import Logo from "~/components/Logo.vue";
-import VuetifyLogo from "~/components/VuetifyLogo.vue";
-
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
+  components: {},
+
+  data() {
+    return {
+      generatedName: [],
+      consonants: [
+        "b",
+        "c",
+        "d",
+        "f",
+        "g",
+        "h",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z"
+      ],
+      vowels: ["a", "e", "i", "o", "u"]
+    };
+  },
+
+  methods: {
+    chooseConsonant() {
+      let chosenConsonant = this.consonants[
+        Math.floor(Math.random() * this.consonants.length)
+      ];
+      this.generatedName.push(chosenConsonant);
+    },
+
+    chooseVowel() {
+      let chosenVowel = this.vowels[
+        Math.floor(Math.random() * this.vowels.length)
+      ];
+
+      this.generatedName.push(chosenVowel);
+      console.log(this.generatedName);
+    },
+
+    clearName() {
+      this.generatedName = [];
+    }
   }
 };
 </script>
+
+<style scoped>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+</style>
