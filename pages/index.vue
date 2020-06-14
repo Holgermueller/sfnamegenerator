@@ -27,7 +27,7 @@ export default {
 
   data() {
     return {
-      generatedName: [],
+      generatedName: "",
       consonants: [
         "b",
         "c",
@@ -60,7 +60,7 @@ export default {
       let chosenConsonant = this.consonants[
         Math.floor(Math.random() * this.consonants.length)
       ];
-      this.generatedName.push(chosenConsonant);
+      this.generatedName.concat(chosenConsonant.toUpperCase());
     },
 
     chooseVowel() {
@@ -68,8 +68,7 @@ export default {
         Math.floor(Math.random() * this.vowels.length)
       ];
 
-      this.generatedName.push(chosenVowel);
-      console.log(this.generatedName);
+      this.generatedName.concat(chosenVowel.toUpperCase());
     },
 
     clearName() {
