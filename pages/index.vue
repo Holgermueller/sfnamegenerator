@@ -4,6 +4,7 @@
       <div class="text-center"></div>
       <v-card>
         <v-card-title class="title">SFNG</v-card-title>
+        <v-card-subtitle>(Sci-Fi Name Generator)</v-card-subtitle>
         <v-card-text>
           <div>{{ this.generatedName }}</div>
         </v-card-text>
@@ -13,6 +14,11 @@
               <v-btn @click="chooseConsonant" block>Add a Consonant</v-btn>
             </li>
             <li><v-btn @click="chooseVowel" block>Add a Vowel</v-btn></li>
+            <li>
+              <v-btn @click="addDash" block>
+                Add a dash
+              </v-btn>
+            </li>
             <li><v-btn @click="clearName" block>Clear</v-btn></li>
           </ul>
         </v-card-actions>
@@ -51,7 +57,8 @@ export default {
         "y",
         "z"
       ],
-      vowels: ["a", "e", "i", "o", "u"]
+      vowels: ["a", "e", "i", "o", "u"],
+      dash: "-"
     };
   },
 
@@ -60,7 +67,7 @@ export default {
       let chosenConsonant = this.consonants[
         Math.floor(Math.random() * this.consonants.length)
       ];
-      this.generatedName.concat(chosenConsonant.toUpperCase());
+      this.generatedName += chosenConsonant.toUpperCase();
     },
 
     chooseVowel() {
@@ -68,11 +75,15 @@ export default {
         Math.floor(Math.random() * this.vowels.length)
       ];
 
-      this.generatedName.concat(chosenVowel.toUpperCase());
+      this.generatedName += chosenVowel.toUpperCase();
+    },
+
+    addDash() {
+      this.generatedName += this.dash;
     },
 
     clearName() {
-      this.generatedName = [];
+      this.generatedName = "";
     }
   }
 };
