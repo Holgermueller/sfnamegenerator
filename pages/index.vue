@@ -1,30 +1,29 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <div class="text-center"></div>
-      <v-card>
-        <v-card-title class="title">SFNG</v-card-title>
-        <v-card-subtitle>(Sci-Fi Name Generator)</v-card-subtitle>
-        <v-card-text>
-          <div>{{ this.generatedName }}</div>
-        </v-card-text>
-        <v-card-actions>
-          <ul>
-            <li>
-              <v-btn @click="chooseConsonant" block>Add a Consonant</v-btn>
-            </li>
-            <li><v-btn @click="chooseVowel" block>Add a Vowel</v-btn></li>
-            <li>
-              <v-btn @click="addDash" block>
-                Add a dash
-              </v-btn>
-            </li>
-            <li><v-btn @click="clearName" block>Clear</v-btn></li>
-          </ul>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+  <div id="main">
+    <v-card class="card">
+      <v-card-title class="title">SFNG</v-card-title>
+      <v-card-subtitle>(Sci-Fi Name Generator)</v-card-subtitle>
+      <v-card-text>
+        <h1 v-if="this.generatedName" class="name-display">
+          {{ this.generatedName }}
+        </h1>
+        <h1 v-else class="place-holder">_______________________________</h1>
+      </v-card-text>
+      <v-card-actions>
+        <v-btn class="button" @click="chooseConsonant">Add a Consonant</v-btn>
+        <v-spacer></v-spacer>
+        <v-btn class="button" @click="chooseVowel">Add a Vowel</v-btn>
+
+        <v-btn class="button" @click="addDash">
+          Add a dash
+        </v-btn>
+
+        <v-btn class="button" @click="deleteLastLetter">Delete</v-btn>
+
+        <v-btn class="button" @click="clearName">Clear</v-btn>
+      </v-card-actions>
+    </v-card>
+  </div>
 </template>
 
 <script>
@@ -82,6 +81,13 @@ export default {
       this.generatedName += this.dash;
     },
 
+    deleteLastLetter() {
+      this.generatedName = this.generatedName.slice(
+        0,
+        this.generatedName.length - 1
+      );
+    },
+
     clearName() {
       this.generatedName = "";
     }
@@ -90,9 +96,27 @@ export default {
 </script>
 
 <style scoped>
+.card {
+  margin: 7% auto;
+  width: 85%;
+}
+.name-display {
+  height: 55%;
+}
+.name-display,
+.place-holder {
+  margin: 7% auto;
+  text-align: center;
+}
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
+li {
+  padding: 4%;
+}
+/* .button {
+  width: 100%;
+} */
 </style>
