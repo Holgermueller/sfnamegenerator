@@ -13,13 +13,13 @@
         <v-btn class="button" @click="chooseConsonant">Add a Consonant</v-btn>
         <v-spacer></v-spacer>
         <v-btn class="button" @click="chooseVowel">Add a Vowel</v-btn>
-
+        <v-spacer></v-spacer>
         <v-btn class="button" @click="addDash">
           Add a dash
         </v-btn>
-
+        <v-spacer></v-spacer>
         <v-btn class="button" @click="deleteLastLetter">Delete</v-btn>
-
+        <v-spacer></v-spacer>
         <v-btn class="button" @click="clearName">Clear</v-btn>
       </v-card-actions>
     </v-card>
