@@ -28,10 +28,35 @@ let vowels = ["a", "e", "i", "o", "u"];
 let numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 let dash = "-";
 
-const chooseConsonant = () => {};
+const chooseConsonant = () => {
+  let chosenConsonant =
+    consonants[Math.floor(Math.random() * consonants.length)];
 
-const chooseVowel = () => {};
+  generatedName += chosenConsonant.toUpperCase();
 
-const chooseNumber = () => {};
+  console.log(generatedName);
+};
 
-const addDash = () => {};
+const chooseVowel = () => {
+  let chosenVowel = vowels[Math.floor(Math.random() * vowels.length)];
+
+  generatedName += chosenVowel.toUpperCase();
+};
+
+const chooseNumber = () => {
+  let chosenNumber = numbers[Math.floor(Math.random() * numbers.length)];
+
+  generatedName += chosenNumber.toUpperCase();
+};
+
+const addDash = () => {
+  generatedName += dash;
+};
+
+const deleteLetter = () => {
+  console.log("click");
+};
+
+const clearWord = () => {
+  generatedName = "";
+};
