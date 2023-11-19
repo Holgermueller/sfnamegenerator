@@ -16,10 +16,13 @@
   <body>
     <header>
       <h1>SFNG</h1>
+      <strong>(Sci Fi Name Generator)</strong>
     </header>
 
     <main>
-      <h2 id="nameHolder">Name appears here...</h2>
+      <div class="name-holder">
+        <h2 class="name-display" id="nameDisplay">Name appears here...</h2>
+      </div>
 
       <div class="buttons-array">
         <button onclick="chooseConsonant()">Add a consonant</button>
@@ -30,13 +33,13 @@
 
         <button onclick="addDash()">Add a dash</button>
 
-        <button onclick="deleteLetter()">Delete last letter</button>
+        <button onclick="deleteLetter()">Delete last character</button>
 
         <button onclick="clearWord()">Clear word</button>
       </div>
     </main>
 
-    <section class="button-section">
+    <section class="about-button-section">
       <button class="about-button" id="modalButton" onclick="showModal()">
         About
       </button>
@@ -45,7 +48,8 @@
     <div class="modal" id="myModal">
       <div class="modal-content">
         <p class="modal-text">
-          Hello, Esteemed Internet Wanderer, and welcome to this app!
+          Hello, Esteemed Internet Wanderer, and welcome to the Sci Fi Name
+          Generator!
         </p>
         <p>
           It pulls random letters, numbers, and one special character from a few

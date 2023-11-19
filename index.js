@@ -1,6 +1,7 @@
 "use strict";
 
 let generatedName = "";
+
 let consonants = [
   "b",
   "c",
@@ -72,7 +73,7 @@ const clearWord = () => {
 };
 
 const pushNameToDOM = () => {
-  document.getElementById("nameHolder").innerHTML = generatedName;
+  document.getElementById("nameDisplay").innerHTML = generatedName;
 };
 
 const modal = document.getElementById("myModal");
