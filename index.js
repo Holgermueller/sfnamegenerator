@@ -34,29 +34,43 @@ const chooseConsonant = () => {
 
   generatedName += chosenConsonant.toUpperCase();
 
-  console.log(generatedName);
+  pushNameToDOM();
 };
 
 const chooseVowel = () => {
   let chosenVowel = vowels[Math.floor(Math.random() * vowels.length)];
 
   generatedName += chosenVowel.toUpperCase();
+
+  pushNameToDOM();
 };
 
 const chooseNumber = () => {
   let chosenNumber = numbers[Math.floor(Math.random() * numbers.length)];
 
   generatedName += chosenNumber.toUpperCase();
+
+  pushNameToDOM();
 };
 
 const addDash = () => {
   generatedName += dash;
+
+  pushNameToDOM();
 };
 
 const deleteLetter = () => {
-  console.log("click");
+  generatedName = generatedName.slice(0, generatedName.length - 1);
+
+  pushNameToDOM();
 };
 
 const clearWord = () => {
   generatedName = "";
+
+  pushNameToDOM();
+};
+
+const pushNameToDOM = () => {
+  document.getElementById("nameHolder").innerHTML = generatedName;
 };
