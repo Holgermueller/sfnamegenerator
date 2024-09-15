@@ -29,4 +29,4 @@ If you discover an issue, please create an issue. Then create a PR and reference
 
 ### Like this project?
 
-You're welcome to [Buy me a coffee](https://ko-fi.com/holgermuellerart). This link will take you to a site where I'm attempting to fund another passion project.
+You're welcome to [buy me a coffee](https://ko-fi.com/holgermuellerart). This link will take you to a site where I'm attempting to fund another passion project.
