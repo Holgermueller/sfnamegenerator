@@ -23,7 +23,7 @@ The easiest way to see how it works, after visiting the live project here, but i
 
 As is, this projects works pretty well for me, but if you feel something's missing you feel you need, feel free to create an issue. Then please fork and clone this project.
 
-### Find a but?
+### Find a bug?
 
 If you discover an issue, please create an issue. Then create a PR and reference the issue you created.
 
